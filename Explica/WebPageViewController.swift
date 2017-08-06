@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class WebPageViewController: UIViewController, UIWebViewDelegate {
     
@@ -15,6 +16,8 @@ class WebPageViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var loadingImage: UIImageView!
     @IBOutlet weak var loadingLogo: UIImageView!
+
+    var audioPlayer: AVAudioPlayer!
 
 
     override func viewDidLoad() {
@@ -36,7 +39,9 @@ class WebPageViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         loadingImage.isHidden = true
         loadingLogo.isHidden = true
+
     }
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

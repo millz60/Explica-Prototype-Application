@@ -13,6 +13,12 @@
 		C93EA7641F2D5D5E00EBA3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93EA7621F2D5D5E00EBA3F2 /* LaunchScreen.storyboard */; };
 		C93EA76C1F2D5DAE00EBA3F2 /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EA76B1F2D5DAE00EBA3F2 /* HomePageTableViewController.swift */; };
 		C9621DCA1F2D661500657C5A /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9621DC91F2D661500657C5A /* ArticleTableViewCell.swift */; };
+		C9AF93841F3679FB00697AAC /* ExplicaLoadingScreenSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF93831F3679FB00697AAC /* ExplicaLoadingScreenSound.mp3 */; };
+		C9AF93871F367EC300697AAC /* ExplicaLoadingScreenSound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF93861F367EC300697AAC /* ExplicaLoadingScreenSound2.mp3 */; };
+		C9AF93891F367F0B00697AAC /* ExplicaLoadingScreenSound3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF93881F367F0B00697AAC /* ExplicaLoadingScreenSound3.mp3 */; };
+		C9AF938B1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF938A1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 */; };
+		C9AF938D1F3680F700697AAC /* ExplicaItemSelected.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF938C1F3680F700697AAC /* ExplicaItemSelected.mp3 */; };
+		C9AF938F1F36836F00697AAC /* ExplicaPageLoaded.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF938E1F36836F00697AAC /* ExplicaPageLoaded.mp3 */; };
 		C9B6E5281F3289170001AA71 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E5271F3289170001AA71 /* WebPageViewController.swift */; };
 		C9B6E52A1F3293DA0001AA71 /* FootballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E5291F3293DA0001AA71 /* FootballViewController.swift */; };
 		C9C2335A1F327BBE00D2DBFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C233591F327BBE00D2DBFD /* HomeViewController.swift */; };
@@ -27,6 +33,12 @@
 		C93EA7651F2D5D5E00EBA3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93EA76B1F2D5DAE00EBA3F2 /* HomePageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
 		C9621DC91F2D661500657C5A /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		C9AF93831F3679FB00697AAC /* ExplicaLoadingScreenSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaLoadingScreenSound.mp3; sourceTree = "<group>"; };
+		C9AF93861F367EC300697AAC /* ExplicaLoadingScreenSound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaLoadingScreenSound2.mp3; sourceTree = "<group>"; };
+		C9AF93881F367F0B00697AAC /* ExplicaLoadingScreenSound3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaLoadingScreenSound3.mp3; sourceTree = "<group>"; };
+		C9AF938A1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaLoadingScreenSound4.mp3; sourceTree = "<group>"; };
+		C9AF938C1F3680F700697AAC /* ExplicaItemSelected.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaItemSelected.mp3; sourceTree = "<group>"; };
+		C9AF938E1F36836F00697AAC /* ExplicaPageLoaded.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaPageLoaded.mp3; sourceTree = "<group>"; };
 		C9B6E5271F3289170001AA71 /* WebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 		C9B6E5291F3293DA0001AA71 /* FootballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballViewController.swift; sourceTree = "<group>"; };
 		C9C233591F327BBE00D2DBFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +60,7 @@
 			children = (
 				C93EA7581F2D5D5E00EBA3F2 /* Explica */,
 				C93EA7571F2D5D5E00EBA3F2 /* Products */,
+				C9AF93851F367A0300697AAC /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +86,20 @@
 				C9B6E5271F3289170001AA71 /* WebPageViewController.swift */,
 				C9B6E5291F3293DA0001AA71 /* FootballViewController.swift */,
 			);
+			path = Explica;
+			sourceTree = "<group>";
+		};
+		C9AF93851F367A0300697AAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF93831F3679FB00697AAC /* ExplicaLoadingScreenSound.mp3 */,
+				C9AF93861F367EC300697AAC /* ExplicaLoadingScreenSound2.mp3 */,
+				C9AF93881F367F0B00697AAC /* ExplicaLoadingScreenSound3.mp3 */,
+				C9AF938A1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 */,
+				C9AF938C1F3680F700697AAC /* ExplicaItemSelected.mp3 */,
+				C9AF938E1F36836F00697AAC /* ExplicaPageLoaded.mp3 */,
+			);
+			name = "Supporting Files";
 			path = Explica;
 			sourceTree = "<group>";
 		};
@@ -136,8 +163,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AF93891F367F0B00697AAC /* ExplicaLoadingScreenSound3.mp3 in Resources */,
+				C9AF93841F3679FB00697AAC /* ExplicaLoadingScreenSound.mp3 in Resources */,
 				C93EA7641F2D5D5E00EBA3F2 /* LaunchScreen.storyboard in Resources */,
+				C9AF938F1F36836F00697AAC /* ExplicaPageLoaded.mp3 in Resources */,
+				C9AF938D1F3680F700697AAC /* ExplicaItemSelected.mp3 in Resources */,
+				C9AF93871F367EC300697AAC /* ExplicaLoadingScreenSound2.mp3 in Resources */,
 				C93EA7611F2D5D5E00EBA3F2 /* Assets.xcassets in Resources */,
+				C9AF938B1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 in Resources */,
 				C93EA75F1F2D5D5E00EBA3F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

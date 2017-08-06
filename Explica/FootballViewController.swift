@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FootballViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +19,10 @@ class FootballViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var feedView: UITableView!
     @IBOutlet weak var tableBackground: UIView!
+    @IBOutlet weak var popOutMenu: UIView!
+    @IBOutlet weak var menuButton: UIButton!
+
+    var audioPlayer: AVAudioPlayer!
 
     
     let articleTitles = ["NFL: Quarterbacks returning from injuries.","Le’Veon Bell vs. Ezekiel Elliott","O.J. Simpson granted parole.","Top 10 all-time greatest running backs.","Pre-season Top 25 college football poll.","Antonio Brown vs. Julio Jones","NFL: Top defensive teams this season.","NFL: Fantasy football sleepers.","Von Miller vs. Jadeveon Clowney"]
@@ -39,8 +44,186 @@ class FootballViewController: UIViewController, UITableViewDelegate, UITableView
         
         let timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(animateBackground), userInfo: nil, repeats: true)
 
+        let loadingScreen = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        
+        loadingScreen.backgroundColor = UIColor(red: 248.0/255.0, green: 254.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        
+        let logoImage = UIImageView(frame: CGRect(x: (self.view.frame.size.width)/2 - 100, y: (self.view.frame.size.height)/2 - 225, width: 200, height: 250))
+        logoImage.image = UIImage(named: "ExplicaLogo")
+        loadingScreen.addSubview(logoImage)
+        
+        let logoText = UIImageView(frame: CGRect(x: (self.view.frame.size.width)/2 - 100, y: (self.view.frame.size.height)/2, width: 200, height: 100))
+        logoText.image = UIImage(named: "ExplicaTextTransparent")
+        loadingScreen.addSubview(logoText)
+        
+        let mottoLabel = UILabel(frame: CGRect(x: (self.view.frame.size.width)/2 - 200, y: (self.view.frame.size.height)/2 + 100, width: 400, height: 50))
+        mottoLabel.font = UIFont(name: "Apple SD Gothic Neo", size: 25.0)
+        mottoLabel.text = "Noise-cancelling News."
+        mottoLabel.textColor = .white
+        mottoLabel.textAlignment = .center
+        loadingScreen.addSubview(mottoLabel)
+        
+        let cyan = UIColor(red: 51.0/255.0, green: 227.0/255.0, blue: 210.0/255.0, alpha: 1.0)
+        
+        let color2 = UIColor(red: 65.0/255.0, green: 210.0/255.0, blue: 253.0/255.0, alpha: 1.0)
+        
+        let color3 = UIColor(red: 253.0/255.0, green: 77.0/255.0, blue: 110.0/255.0, alpha: 1.0)
+        
+        let color4 = UIColor(red: 53.0/255.0, green: 230.0/255.0, blue: 215.0/255.0, alpha: 1.0)
+        
+        let color5 = UIColor(red: 89.0/255.0, green: 68.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+        
+        self.view.addSubview(loadingScreen)
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            loadingScreen.backgroundColor = UIColor.green
+        }) { (true) in
+            
+            
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                loadingScreen.backgroundColor = cyan
+            }) { (true) in
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    loadingScreen.backgroundColor = color2
+                }) { (true) in
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        loadingScreen.backgroundColor = color3
+                    }) { (true) in
+                        
+                        UIView.animate(withDuration: 0.5, animations: {
+                            loadingScreen.backgroundColor = color4
+                        }) { (true) in
+                            
+                            UIView.animate(withDuration: 0.5, animations: {
+                                loadingScreen.backgroundColor = color5
+                            }) { (true) in
+                                
+                                UIView.animate(withDuration: 1.0, animations: {
+                                    loadingScreen.alpha = 0.0
+                                })
+                                
+                                
+                            }
+                        }
+                        
+                    }
+                    
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+        }
+
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func menuButtonPressed(){
+        
+        if(self.popOutMenu.isHidden){
+            self.popOutMenu.isHidden = false
+            self.menuButton.setImage(UIImage(named: "menu_selected" ), for: .normal)
+            
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+        } else {
+            self.popOutMenu.isHidden = true
+            self.menuButton.setImage(UIImage(named: "menu" ), for: .normal)
+            
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func closeButtonPressed() {
+        
+        if(self.popOutMenu.isHidden){
+            self.popOutMenu.isHidden = false
+            self.menuButton.setImage(UIImage(named: "menu_selected" ), for: .normal)
+            
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+        } else {
+            self.popOutMenu.isHidden = true
+            self.menuButton.setImage(UIImage(named: "menu" ), for: .normal)
+            
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+        }
     }
     
     func animateBackground() {
@@ -98,13 +281,57 @@ class FootballViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destinationController = segue.destination as! WebPageViewController
-        
-        let sender2 = sender as! ArticleTableViewCell
-        
-        let selectedURL = sender2.webLink
-        
-        destinationController.pageURL = selectedURL
+        if(segue.identifier == "FootballToWeb"){
+            
+            let destinationController = segue.destination as! WebPageViewController
+            
+            let sender2 = sender as! ArticleTableViewCell
+            
+            let selectedURL = sender2.webLink
+            
+            destinationController.pageURL = selectedURL
+            
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+        } else if (segue.identifier == "BasketballMenuButton"){
+            
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+            
+            
+        }
         
         
     }
