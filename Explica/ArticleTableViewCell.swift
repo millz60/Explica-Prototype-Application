@@ -12,7 +12,9 @@ class ArticleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articlePhoto: UIImageView!
+    @IBOutlet weak var topicLabel: UILabel!
     var webLink = ""
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -19,6 +19,8 @@
 		C9AF938B1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF938A1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 */; };
 		C9AF938D1F3680F700697AAC /* ExplicaItemSelected.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF938C1F3680F700697AAC /* ExplicaItemSelected.mp3 */; };
 		C9AF938F1F36836F00697AAC /* ExplicaPageLoaded.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9AF938E1F36836F00697AAC /* ExplicaPageLoaded.mp3 */; };
+		C9AF93911F38FD3900697AAC /* SecondHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF93901F38FD3900697AAC /* SecondHomeViewController.swift */; };
+		C9AF93931F38FF2F00697AAC /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF93921F38FF2F00697AAC /* MenuTableViewCell.swift */; };
 		C9B6E5281F3289170001AA71 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E5271F3289170001AA71 /* WebPageViewController.swift */; };
 		C9B6E52A1F3293DA0001AA71 /* FootballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E5291F3293DA0001AA71 /* FootballViewController.swift */; };
 		C9C2335A1F327BBE00D2DBFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C233591F327BBE00D2DBFD /* HomeViewController.swift */; };
@@ -39,6 +41,8 @@
 		C9AF938A1F36805F00697AAC /* ExplicaLoadingScreenSound4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaLoadingScreenSound4.mp3; sourceTree = "<group>"; };
 		C9AF938C1F3680F700697AAC /* ExplicaItemSelected.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaItemSelected.mp3; sourceTree = "<group>"; };
 		C9AF938E1F36836F00697AAC /* ExplicaPageLoaded.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ExplicaPageLoaded.mp3; sourceTree = "<group>"; };
+		C9AF93901F38FD3900697AAC /* SecondHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondHomeViewController.swift; sourceTree = "<group>"; };
+		C9AF93921F38FF2F00697AAC /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		C9B6E5271F3289170001AA71 /* WebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 		C9B6E5291F3293DA0001AA71 /* FootballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballViewController.swift; sourceTree = "<group>"; };
 		C9C233591F327BBE00D2DBFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				C9621DC91F2D661500657C5A /* ArticleTableViewCell.swift */,
 				C9B6E5271F3289170001AA71 /* WebPageViewController.swift */,
 				C9B6E5291F3293DA0001AA71 /* FootballViewController.swift */,
+				C9AF93901F38FD3900697AAC /* SecondHomeViewController.swift */,
+				C9AF93921F38FF2F00697AAC /* MenuTableViewCell.swift */,
 			);
 			path = Explica;
 			sourceTree = "<group>";
@@ -184,7 +190,9 @@
 			files = (
 				C93EA75A1F2D5D5E00EBA3F2 /* AppDelegate.swift in Sources */,
 				C9621DCA1F2D661500657C5A /* ArticleTableViewCell.swift in Sources */,
+				C9AF93931F38FF2F00697AAC /* MenuTableViewCell.swift in Sources */,
 				C93EA76C1F2D5DAE00EBA3F2 /* HomePageTableViewController.swift in Sources */,
+				C9AF93911F38FD3900697AAC /* SecondHomeViewController.swift in Sources */,
 				C9B6E5281F3289170001AA71 /* WebPageViewController.swift in Sources */,
 				C9C2335A1F327BBE00D2DBFD /* HomeViewController.swift in Sources */,
 				C9B6E52A1F3293DA0001AA71 /* FootballViewController.swift in Sources */,
