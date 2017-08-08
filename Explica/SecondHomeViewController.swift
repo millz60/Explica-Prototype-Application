@@ -25,8 +25,10 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var pageHeaderLabel: UILabel!
     
     var homeSelected = true
-    var footballSelected = false
     var basketballSelected = false
+    var footballSelected = false
+    var musicSelected = false
+    var gamingSelected = false
     
     var audioPlayer: AVAudioPlayer!
     
@@ -36,20 +38,30 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
     
     let HomeScreenWebLinks = ["http://explica.co/hellblade/", "http://explica.co/madden-2018-track/", "http://explica.co/neymar-trade-17/", "http://explica.co/matic-trade-17/","http://explica.co/nfl-qbs-injury-2017/","http://explica.co/nba-2k18/","http://explica.co/madden-2018/", "http://explica.co/draymond-green-mcgregor-beef/", "http://explica.co/kyrie-irving-trade-17/"]
     
+    let BasketballArticleTitles = ["McGregor and Draymond Green beef on Insta.","Kyrie Irving requesting trade out of Cleveland.","Shaq clowns Lavar, \"I’ll glue this wig to my head.\"","Karl Malone vs. Charles Barkley","Gordon Hayward to Boston Celtics.","Mr. Triple Double wins MVP.","Ranking all 30 NBA franchises.","Clippers no more.","NBA 2017 Draft: Round 1, Grades"]
     
-    
+    let BasketballWebLinks = ["http://explica.co/draymond-green-mcgregor-beef/","http://explica.co/kyrie-irving-trade-17/","http://explica.co/oneal-ball-beef/", "http://explica.co/karl-malone-vs-charles-barkley/", "http://explica.co/uta-bos-trade-17/","http://explica.co/russell-westbrook-mvp/","http://explica.co/nba-franchise-17/","http://explica.co/lac-free-agent-17/","http://explica.co/nba-draft-17-r1/"]
     
     let FootballArticleTitles = ["NFL: Quarterbacks returning from injuries.","Le’Veon Bell vs. Ezekiel Elliott","O.J. Simpson granted parole.","Top 10 all-time greatest running backs.","Pre-season Top 25 college football poll.","Antonio Brown vs. Julio Jones","NFL: Top defensive teams this season.","NFL: Fantasy football sleepers.","Von Miller vs. Jadeveon Clowney"]
     
     let FootballWebLinks = ["http://explica.co/nfl-qbs-injury-2017/","http://explica.co/leveon-bell-v-ezekiel-elliott/","http://explica.co/oj-simpson-parole-17/", "http://explica.co/nfl-all-time-rb/", "http://explica.co/colleges-top-25/","http://explica.co/antonio-brown-vs-julio-jones/","http://explica.co/nfl-top-defense-17/","http://explica.co/nfl-sleepers-17/","http://explica.co/von-miller-v-jadaveon-clowney/"]
     
-    let BasketballArticleTitles = ["McGregor and Draymond Green beef on Insta.","Kyrie Irving requesting trade out of Cleveland.","Shaq clowns Lavar, \"I’ll glue this wig to my head.\"","Karl Malone vs. Charles Barkley","Gordon Hayward to Boston Celtics.","Mr. Triple Double wins MVP.","Ranking all 30 NBA franchises.","Clippers no more.","NBA 2017 Draft: Round 1, Grades"]
+    let MusicArticleTitles = ["EA just dropped Madden’s soundtrack.","French Montana’s new album is stacked with features.","Dr. Dre surprise new single; more soon from Eminem?","Lil Wayne drops 4 free tracks.","Drake is back again, this time on Metro boomin’s track.","Drake dropped his second single this week.","Rappers & tigers: see DJ Khaled’s ‘On Everything’","New Vince Staples is here.","Listen to Drake’s new single."]
     
-    let BasketballWebLinks = ["http://explica.co/draymond-green-mcgregor-beef/","http://explica.co/kyrie-irving-trade-17/","http://explica.co/oneal-ball-beef/", "http://explica.co/karl-malone-vs-charles-barkley/", "http://explica.co/uta-bos-trade-17/","http://explica.co/russell-westbrook-mvp/","http://explica.co/nba-franchise-17/","http://explica.co/lac-free-agent-17/","http://explica.co/nba-draft-17-r1/"]
+    let MusicWebLinks = ["http://explica.co/madden-2018-track/","http://explica.co/jungle-rules/","http://explica.co/eminem-dre-17/","http://explica.co/lil-wayne-jul-17/","http://explica.co/no-complaints/","http://explica.co/freak-in-you/","http://explica.co/on-everything/","http://explica.co/big-fish-theory/","http://explica.co/signs-drake/"]
+    
+    let GamingArticleTitles = ["Two days to Hellblade release.","The latest from NBA 2K soon.","One month to Madden 18.", "Don't miss the beta: Destiny 2.", "New Overwatch character: Doomfist", "Kayn, The Shadow Reaper coming to LoL soon!","Final Fantasy XII has never looked better.","Xbox One X: most powerful, smallest console ever.","Battlefront II gameplay footage released."]
+    
+    let GamingWebLinks = ["http://explica.co/hellblade/","http://explica.co/nba-2k18/","http://explica.co/madden-2018/","http://explica.co/destiny-2/","http://explica.co/doomfist-overwatch/","http://explica.co/kayn-the-shadow-reaper/","http://explica.co/final-fantasy-xii-remake/","http://explica.co/xbox-one-x/","http://explica.co/battlefront-ii/"]
+    
+
     
     let HomeScreenImages = [18,19,20,21,9,22,23,0,1]
-    let FootballImages = [9,10,11,12,13,14,15,16,17]
     let BasketballImages = [0,1,2,3,4,5,6,7,8]
+    let FootballImages = [9,10,11,12,13,14,15,16,17]
+    let MusicImages = [19,24,25,26,27,28,29,30,31]
+    let GamingImages = [18,32,19,33,34,35,36,37,38]
+    
     
     
     override func viewDidLoad() {
@@ -157,6 +169,7 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
         
+        self.articlesTableView.setContentOffset(CGPoint.zero, animated: false)
         
     }
     
@@ -210,6 +223,14 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 cell.backgroundColor = UIColor(red: 255.0/255.0, green: 61.0/255.0, blue: 88.0/255.0, alpha: 1.0) //255, 61, 88
                 
+            } else if (musicSelected && cell.cellImage.image == UIImage(named: "MusicMenuTransparent")){
+                
+                cell.backgroundColor = UIColor(red: 255.0/255.0, green: 61.0/255.0, blue: 88.0/255.0, alpha: 1.0) //255, 61, 88
+                
+            } else if (gamingSelected && cell.cellImage.image == UIImage(named: "GamingMenuTransparent")){
+                
+                cell.backgroundColor = UIColor(red: 255.0/255.0, green: 61.0/255.0, blue: 88.0/255.0, alpha: 1.0) //255, 61, 88
+                
             }
             
             return cell
@@ -256,7 +277,40 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 return cell
                 
+            } else if (self.musicSelected){
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArticleTableViewCell
+                let currentRow = indexPath.row
+                
+                cell.articleTitle.text = MusicArticleTitles[currentRow]
+                cell.articlePhoto.image = UIImage(named: String(MusicImages[currentRow]))
+                cell.webLink = MusicWebLinks[currentRow]
+                cell.topicLabel.text = "M U S I C"
+                
+                return cell
+                
+                
+                
+                
+                
+            } else if (self.gamingSelected){
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArticleTableViewCell
+                let currentRow = indexPath.row
+                
+                cell.articleTitle.text = GamingArticleTitles[currentRow]
+                cell.articlePhoto.image = UIImage(named: String(GamingImages[currentRow]))
+                cell.webLink = GamingWebLinks[currentRow]
+                cell.topicLabel.text = "G A M I N G"
+                
+                return cell
+                
+                
+                
+                
+                
             }
+            
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ArticleTableViewCell
             
@@ -276,12 +330,14 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if(tableView == self.menuTableView){
             
-            // Home, Basketball, Football,
+            // Home, Basketball, Football, Music
             if(indexPath.row == 0){
                 
                 self.homeSelected = true
-                self.footballSelected = false
                 self.basketballSelected = false
+                self.footballSelected = false
+                self.musicSelected = false
+                self.gamingSelected = false
                 
                 self.menuButtonPressed()
                 self.pageHeaderLabel.text = "H O M E"
@@ -298,9 +354,11 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
             } else if(indexPath.row == 1){
             
                 self.homeSelected = false
-                self.footballSelected = false
                 self.basketballSelected = true
-                
+                self.footballSelected = false
+                self.musicSelected = false
+                self.gamingSelected = false
+
                 self.menuButtonPressed()
                 self.pageHeaderLabel.text = "B A S K E T B A L L"
                 
@@ -313,13 +371,43 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
             } else if(indexPath.row == 2){
                 
                 self.homeSelected = false
-                self.footballSelected = true
                 self.basketballSelected = false
-                
-                
-                
+                self.footballSelected = true
+                self.musicSelected = false
+                self.gamingSelected = false
+
                 self.menuButtonPressed()
                 self.pageHeaderLabel.text = "F O O T B A L L"
+                
+                
+                tableView.cellForRow(at: indexPath)?.backgroundColor = UIColor(red: 255.0/255.0, green: 61.0/255.0, blue: 88.0/255.0, alpha: 1.0)
+                self.articlesTableView.reloadData()
+                
+            } else if(indexPath.row == 3){
+                
+                self.homeSelected = false
+                self.basketballSelected = false
+                self.footballSelected = false
+                self.musicSelected = true
+                self.gamingSelected = false
+
+                self.menuButtonPressed()
+                self.pageHeaderLabel.text = "M U S I C"
+                
+                
+                tableView.cellForRow(at: indexPath)?.backgroundColor = UIColor(red: 255.0/255.0, green: 61.0/255.0, blue: 88.0/255.0, alpha: 1.0)
+                self.articlesTableView.reloadData()
+                
+            } else if(indexPath.row == 4){
+                
+                self.homeSelected = false
+                self.basketballSelected = false
+                self.footballSelected = false
+                self.musicSelected = false
+                self.gamingSelected = true
+                
+                self.menuButtonPressed()
+                self.pageHeaderLabel.text = "G A M I N G"
                 
                 
                 tableView.cellForRow(at: indexPath)?.backgroundColor = UIColor(red: 255.0/255.0, green: 61.0/255.0, blue: 88.0/255.0, alpha: 1.0)
@@ -444,7 +532,7 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
+        if(segue.identifier == "WebViewSegue"){
             
             let destinationController = segue.destination as! WebPageViewController
             
@@ -472,7 +560,29 @@ class SecondHomeViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("audio file is not found")
             }
             
-        
+        } else if (segue.identifier == "SettingsSegue"){
+            
+            let destinationController = segue.destination as! SettingsViewController
+                        
+            var audioFilePath = Bundle.main.path(forResource: "ExplicaItemSelected", ofType: "mp3")
+            
+            if audioFilePath != nil {
+                
+                var audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                } catch{
+                    print("error")
+                }
+                self.audioPlayer.setVolume(0.15, fadeDuration: 1.0)
+                self.audioPlayer.play()
+                
+            } else {
+                print("audio file is not found")
+            }
+            
+        }
         
         
     }

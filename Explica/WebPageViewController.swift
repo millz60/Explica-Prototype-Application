@@ -16,6 +16,8 @@ class WebPageViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var loadingImage: UIImageView!
     @IBOutlet weak var loadingLogo: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingWebForeground: UIView!
 
     var audioPlayer: AVAudioPlayer!
 
@@ -24,9 +26,11 @@ class WebPageViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         let targetURL = URL(string: pageURL)
+        self.loadingIndicator.startAnimating()
         
         self.webView.delegate = self
         self.webView.loadRequest(URLRequest(url: targetURL!))
+        
 
         // Do any additional setup after loading the view.
     }
@@ -39,6 +43,9 @@ class WebPageViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         loadingImage.isHidden = true
         loadingLogo.isHidden = true
+        loadingWebForeground.isHidden = true
+        self.loadingIndicator.stopAnimating()
+        self.loadingIndicator.isHidden = true
 
     }
     
