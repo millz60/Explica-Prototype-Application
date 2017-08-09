@@ -32,15 +32,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var selectedCellIndex: Int!
     
-    let gradient = CAGradientLayer()
-    var gradientSet = [[CGColor]]()
-    var currentGradient: Int = 0
-    
-    let gradientOne = UIColor(red: 51.0/255.0, green: 227.0/255.0, blue: 210.0/255.0, alpha: 1.0).cgColor
-    let gradientTwo = UIColor(red: 65.0/255.0, green: 210.0/255.0, blue: 253.0/255.0, alpha: 1.0).cgColor
-    let gradientThree = UIColor(red: 253.0/255.0, green: 77.0/255.0, blue: 110.0/255.0, alpha: 1.0).cgColor
-    let gradientFour = UIColor(red: 53.0/255.0, green: 230.0/255.0, blue: 215.0/255.0, alpha: 1.0).cgColor
-    let gradientFive = UIColor(red: 89.0/255.0, green: 68.0/255.0, blue: 251.0/255.0, alpha: 1.0).cgColor
+
     
 
     override func viewDidLoad() {
@@ -51,21 +43,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
         
         
-        gradientSet.append([gradientOne, gradientTwo])
-        gradientSet.append([gradientTwo, gradientThree])
-        gradientSet.append([gradientThree, gradientFour])
-        gradientSet.append([gradientFour, gradientFive])
-        gradientSet.append([gradientFive, gradientOne])
+
         
-        
-        gradient.frame = self.view.bounds
-        gradient.colors = gradientSet[currentGradient]
-        gradient.startPoint = CGPoint(x:0, y:0)
-        gradient.endPoint = CGPoint(x:1, y:1)
-        gradient.drawsAsynchronously = true
-        self.tableBackground.layer.addSublayer(gradient)
-        
-        let timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(animateGradient), userInfo: nil, repeats: true)
+        let timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(animateGradient), userInfo: nil, repeats: true)
         
         
         
@@ -75,6 +55,32 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func animateGradient() {
+        
+        let gradient = CAGradientLayer()
+        var gradientSet = [[CGColor]]()
+        var currentGradient: Int = 0
+        
+        let gradientOne = UIColor(red: 51.0/255.0, green: 227.0/255.0, blue: 210.0/255.0, alpha: 1.0).cgColor
+        let gradientTwo = UIColor(red: 65.0/255.0, green: 210.0/255.0, blue: 253.0/255.0, alpha: 1.0).cgColor
+        let gradientThree = UIColor(red: 253.0/255.0, green: 77.0/255.0, blue: 110.0/255.0, alpha: 1.0).cgColor
+        let gradientFour = UIColor(red: 53.0/255.0, green: 230.0/255.0, blue: 215.0/255.0, alpha: 1.0).cgColor
+        let gradientFive = UIColor(red: 89.0/255.0, green: 68.0/255.0, blue: 251.0/255.0, alpha: 1.0).cgColor
+        
+        gradientSet.append([gradientOne, gradientTwo])
+        gradientSet.append([gradientTwo, gradientThree])
+        // gradientSet.append([gradientThree, gradientFour])
+        //  gradientSet.append([gradientFour, gradientFive])
+        //  gradientSet.append([gradientFive, gradientOne])
+        
+        
+        gradient.frame = self.view.bounds
+        gradient.colors = gradientSet[currentGradient]
+        gradient.startPoint = CGPoint(x:0, y:0)
+        gradient.endPoint = CGPoint(x:1, y:1)
+        gradient.drawsAsynchronously = true
+        self.tableBackground.layer.addSublayer(gradient)
+        
+        
         if currentGradient < gradientSet.count - 1 {
             currentGradient += 1
         } else {
@@ -84,7 +90,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
-        gradientChangeAnimation.fillMode = kCAFillModeBoth
+        gradientChangeAnimation.fillMode = kCAFillModeForwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
