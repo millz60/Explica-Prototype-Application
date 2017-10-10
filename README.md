@@ -13,9 +13,9 @@ Just click the menu button on the top right side to navigate to different topics
 Select an article to view it's contents via an in-app web browser.
 
 <h2>Features</h2>
-There are several basic design features built into this app:
-- Rolling colors animation on the loading screen featuring the company's color-scheme.
-- Background colors update regularly to enhance the feel of the app.
-- Sound effects fire when selecting any button 
+There are several basic design features built into this app: <br>
+- Rolling colors animation on the loading screen featuring the company's color-scheme.<br>
+- Background colors update regularly to enhance the feel of the app.<br>
+- Sound effects fire when selecting any button <br>
 - Custom logo and color schemes on the web loading screens
 
